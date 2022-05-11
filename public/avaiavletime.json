@@ -1,0 +1,71 @@
+[
+    {
+        "_id":1,
+        "name":"Teeth Orthodontics",
+        "slote":[
+            "08:00 Am - 09:30AM",
+            "09:30 Am - 10:00AM",
+            "10:00 Am - 10:30AM",
+            "10:30 Am - 11:00AM",
+            "11:00 Am - 11:30AM",
+            "11:30 Am - 12:00PM"
+        ]
+    },
+    {
+        "_id":2,
+        "name":"Cosmetic Dentistry",
+        "slote":[
+            "08:00 Am - 09:30AM",
+            "09:30 Am - 10:00AM",
+            "10:00 Am - 10:30AM",
+            "10:30 Am - 11:00AM",
+            "11:00 Am - 11:30AM",
+            "11:30 Am - 12:00PM"
+        ]
+    },
+    {
+        "_id":3,
+        "name":"Teeth Cleaning",
+        "slote":[
+            "08:00 Am - 09:30AM",
+            "09:30 Am - 10:00AM",
+            "10:00 Am - 10:30AM",
+            "10:30 Am - 11:00AM",
+            "11:00 Am - 11:30AM",
+            "11:30 Am - 12:00PM"
+        ]
+    },
+    {
+        "_id":4,
+        "name":"Teeth Orthodontics",
+        "slote":[
+           
+        ]
+    },
+    {
+        "_id":5,
+        "name":"Teeth Orthodontics",
+        "slote":[
+            "08:00 Am - 09:30AM",
+            "09:30 Am - 10:00AM",
+            "10:00 Am - 10:30AM",
+            "10:30 Am - 11:00AM",
+            "11:00 Am - 11:30AM",
+            "11:30 Am - 12:00PM"
+        ]
+    },
+    {
+        "_id":6,
+        "name":"Teeth Orthodontics",
+        "slote":[
+            "08:00 Am - 09:30AM",
+            "09:30 Am - 10:00AM",
+            "10:00 Am - 10:30AM",
+            "10:30 Am - 11:00AM",
+            "11:00 Am - 11:30AM",
+            "11:30 Am - 12:00PM"
+        ]
+    }
+
+   
+]
