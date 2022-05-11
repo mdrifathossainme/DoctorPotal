@@ -2,8 +2,8 @@ import React from 'react';
 
 const SingleTesimonial = ({stm}) => {
     return (
-        <div class="card w-96 bg-base-100 shadow-xl">
-        <div class="card-body">
+        <div  className="  card w-96 bg-base-100 shadow-xl">
+        <div  className="  card-body">
             <p>{stm.body}</p>
             <div className='flex items-center mt-4 '>
                 <img src={stm.img} className="border-4 border-secondary rounded-full" alt="" />
