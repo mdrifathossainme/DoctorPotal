@@ -7,7 +7,7 @@ import DentalCare from './DentalCare';
 import Info from './Info';
 import Services from './Services';
 import Testimonial from './Testimonial';
-
+import Footer from '../Shared/Footer';
 const Home = () => {
     return (
         <div className='mx-12'>
@@ -18,6 +18,7 @@ const Home = () => {
            <AppointmentSection/>
            <Testimonial/>
            <Contact/>
+          <Footer/>
         </div>
     );
 };
