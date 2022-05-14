@@ -8,7 +8,7 @@ const AvailableAppoinment = ({date}) => {
     const [opneModal,setOpneModal]=useState(null)
 
     useEffect(()=>{
-        fetch('avaiavletime.json')
+        fetch('http://localhost:5000/services')
         .then(res=>res.json())
         .then(data=>setTimeAvailable(data))
     }, [])

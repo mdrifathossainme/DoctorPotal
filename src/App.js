@@ -9,11 +9,14 @@ import ContactUs from './Page/ContactUs/ContactUs'
 import Login from './Page/Login/Login'
 import SignUp from './Page/SIgnUp/SignUp';
 import RequirAuth from './Page/Login/RequirAuth';
-
+import React from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
   return (
     <div className='max-w-7xl mx-auto'>
     <Navbar/>
+    <ToastContainer/>
     <Routes>
       <Route path="/" element={<Home/>}></Route >
       <Route path="/home" element={<Home/>}></Route >
