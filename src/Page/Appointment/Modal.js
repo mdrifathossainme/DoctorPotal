@@ -4,7 +4,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
-const Modal = ({opneModal,date,setOpneModal}) => {
+const Modal = ({opneModal,date,setOpneModal,refetch}) => {
     const {_id,name, slots}=opneModal
 
 const [user]=useAuthState(auth)
@@ -13,13 +13,13 @@ const formattedDate=format(date,"PP")
 
 const handleSubmit=(e)=>{
         e.preventDefault()
-        const time= e.target.time.value
+        const slot= e.target.time.value
 
         const booking={
             treatment:_id,
             treatment:name,
             date:formattedDate,
-            time,
+            slot,
             patient:user.email,
             patientNanme:user.displayName,
             phone:e.target.number.value
@@ -37,20 +37,17 @@ const handleSubmit=(e)=>{
         .then(res=>res.json())
         .then(data=>{
             if(data.success){
-                toast(`Appointment is set, ${formattedDate} at${time}`)
+                toast(`Appointment is set, ${formattedDate} at ${slot}`)
             }
             else{
                 toast.error(`Already have and appointment on ${data.booking?.date} at ${data.booking?.time}`)
             }
+            refetch();
+        setOpneModal(null)
+
         })
 
-
-
-
-
-
-
-        setOpneModal(null)
+    
         
 }
 
