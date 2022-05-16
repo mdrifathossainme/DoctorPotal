@@ -40,7 +40,7 @@ const handleSubmit=(e)=>{
                 toast(`Appointment is set, ${formattedDate} at ${slot}`)
             }
             else{
-                toast.error(`Already have and appointment on ${data.booking?.date} at ${data.booking?.time}`)
+                toast.error(`Already have and appointment on ${data.booking?.date} at ${data.booking?.slot}`)
             }
             refetch();
         setOpneModal(null)
@@ -61,7 +61,7 @@ const handleSubmit=(e)=>{
        <input type="checkbox" id="booingModal"  className="  modal-toggle" />
         <div  className="  modal modal-bottom sm:modal-middle">
       <div  className="  modal-box">
-      <label htmlFor="booingModal"  className="  btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+      <label  htmlFor="booingModal"  className="  btn btn-sm btn-circle absolute right-2 top-2">✕</label>
        <h3  className="   text-lg text-secondary text-2xl font-bold">Booking Service: {name}</h3>
 
        <form onSubmit={handleSubmit} className='grid grid-cols-1 gap-4 mt-6'>

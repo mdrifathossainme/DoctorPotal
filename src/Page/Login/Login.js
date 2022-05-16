@@ -4,34 +4,45 @@ import auth from '../../firebase.init';
 import { useForm } from "react-hook-form";
 import Loading from '../Shared/Loading';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import useToken from '../../hooks/useToken';
+
+
 const Login = () => {
 const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
-const [signInWithEmailAndPassword,epUser,epLoading,epError] = useSignInWithEmailAndPassword(auth);
+const [signInWithEmailAndPassword,user,epLoading,epError] = useSignInWithEmailAndPassword(auth);
 const { register, formState: { errors }, handleSubmit } = useForm();
 const navigate=useNavigate();
 const location=useLocation()
 const from= location.state?.from?.pathname||"/"
 
-if( gLoading||epLoading){
-   return <Loading/>
-}
+
+const [token]=useToken(user||gUser)
+
+
+useEffect(()=>{
+   if(token){
+      navigate(from , {replace:true})
+   }
+
+},[token,from,navigate])
+
+
 let singinError;
 if(epError || gError){
    singinError=<p className='mb-2 text-red-700 font-bold '>{epError?.message||gError?.message}</p>
+
 }
-if(gUser||epUser){
-   navigate(from , {replace:true})
-}
+
+
+
+
 
 const onSubmit = (data) => {
 
    signInWithEmailAndPassword(data.email,data.password)
 
-   navigate("/appointment")
-
 
 };
-
 
 
 return (
