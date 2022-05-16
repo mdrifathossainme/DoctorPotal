@@ -16,6 +16,7 @@ import MyDashboard from './Page/dashBoard/MyDashboard';
 import DashBoard from './Page/dashBoard/dashBoard';
 import Review from './Page/dashBoard/Review';
 import AllUser from './Page/AllUser/AllUser';
+import RequirAdmin from './Page/Login/RequiedAdmin';
 function App() {
   return (
     <div className='max-w-7xl  mx-auto'>
@@ -40,7 +41,9 @@ function App() {
       }>
         <Route index element={<MyDashboard/>}/>
          <Route path='rewi' element={<Review/>}/>
-         <Route path='alluser' element={<AllUser/>}/>
+         <Route path='alluser' element={<RequirAdmin>
+          <AllUser/>
+         </RequirAdmin>}/>
       </Route >
       <Route path="/reviews" element={<Reviews/>}></Route >
       <Route path="/contactus" element={<ContactUs/>}></Route >
