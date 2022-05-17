@@ -17,6 +17,8 @@ import DashBoard from './Page/dashBoard/dashBoard';
 import Review from './Page/dashBoard/Review';
 import AllUser from './Page/AllUser/AllUser';
 import RequirAdmin from './Page/Login/RequiedAdmin';
+import AddDoctot from './Page/AddDoctot/AddDoctot';
+import ManegDoctor from './Page/dashBoard/ManegDoctor';
 function App() {
   return (
     <div className='max-w-7xl  mx-auto'>
@@ -41,8 +43,13 @@ function App() {
       }>
         <Route index element={<MyDashboard/>}/>
          <Route path='rewi' element={<Review/>}/>
+         <Route path='adddoctor' element={<AddDoctot/>}/>
+
          <Route path='alluser' element={<RequirAdmin>
           <AllUser/>
+         </RequirAdmin>}/>
+         <Route path='manegdoctor' element={<RequirAdmin>
+          <ManegDoctor/>
          </RequirAdmin>}/>
       </Route >
       <Route path="/reviews" element={<Reviews/>}></Route >
