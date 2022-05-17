@@ -2,25 +2,10 @@ import React from 'react';
 import { toast } from 'react-toastify';
 
 
-const SingleDocto = ({dt,refetch,index}) => {
+const SingleDocto = ({dt,index, setDeleted}) => {
             const {img,name,specialty ,email}=dt;
 
-            const handleDoctorDeleted=(email)=>{
-                console.log(email)
-            fetch(`https://infinite-brook-24824.herokuapp.com/doctor/${email}`,{
-            method:'DELETE',
-            headers:{
-            "authorization":`Bearer ${localStorage.getItem('accessToken')}`
-            },
-            })
-            .then(res=>res.json())
-            .then(data=>{
-                if(data.deletedCount){
-                    toast.success('delete complate')
-                    refetch()
-                }
-            })
-            }
+          
             return (
             <tr>
             <th>{index+1}</th>
@@ -33,7 +18,10 @@ const SingleDocto = ({dt,refetch,index}) => {
             </td>
             <td>{name}</td>
             <td>{specialty}</td>
-            <td><button onClick={()=>handleDoctorDeleted(email)} className="btn btn-error btn-sm">Removed</button></td>
+            <td>
+                <label onClick={()=>setDeleted(dt)} htmlFor="deletedConfirmModal" className="btn btn-error btn-sm modal-button">Removed</label>
+                
+                </td>
             </tr>
             );
             };
