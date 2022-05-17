@@ -10,7 +10,7 @@ import auth from '../../firebase.init';
         const navigate=useNavigate()
 
                 useEffect(()=>{
-                fetch(`http://localhost:5000/booking?patient=${user.email}`,{
+                fetch(`https://infinite-brook-24824.herokuapp.com/booking?patient=${user.email}`,{
                     method:"GET",
                     headers:{
                         "authorization":`Bearer ${localStorage.getItem('accessToken')}`

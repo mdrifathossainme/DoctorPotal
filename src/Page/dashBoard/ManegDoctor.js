@@ -4,7 +4,7 @@ import Loading from '../Shared/Loading';
 import SingleDocto from './singleDocto';
 
 const ManegDoctor = () => {
-    const {data:doctors ,isLoading,refetch}=useQuery('doctor', ()=>fetch('http://localhost:5000/doctor',{
+    const {data:doctors ,isLoading,refetch}=useQuery('doctor', ()=>fetch('https://infinite-brook-24824.herokuapp.com/doctor',{
         headers:{
 
             "authorization":`Bearer ${localStorage.getItem('accessToken')}`

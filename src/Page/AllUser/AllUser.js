@@ -6,7 +6,7 @@ import User from './User';
 
 const AllUser = () => {
 
-const {data:allUser , isLoading ,refetch}=useQuery('user',()=> fetch('http://localhost:5000/user',{
+const {data:allUser , isLoading ,refetch}=useQuery('user',()=> fetch('https://infinite-brook-24824.herokuapp.com/user',{
     method:'GET',
     headers:{
         'authorization':`Bearer ${localStorage.getItem('accessToken')}`
@@ -17,8 +17,8 @@ if(isLoading){
 }
 
     return (
-<div class="overflow-x-auto">
-  <table class="table w-full">
+<div className="overflow-x-auto">
+  <table className="table w-full">
 
     <thead>
       <tr>

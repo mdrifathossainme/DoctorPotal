@@ -26,7 +26,7 @@ const handleSubmit=(e)=>{
 
 
         }
-    const url='http://localhost:5000/booking'
+    const url='https://infinite-brook-24824.herokuapp.com/booking'
         fetch(url,{
             method:"POST",
             headers:{

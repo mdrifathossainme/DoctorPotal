@@ -10,7 +10,7 @@ import Loading from '../Shared/Loading';
 const AddDoctot = () => {
 
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
-   const {data:service, isLoading}=useQuery("doctorservice", ()=>fetch('http://localhost:5000/doctorservices').then(res=>res.json()))
+   const {data:service, isLoading}=useQuery("doctorservice", ()=>fetch('https://infinite-brook-24824.herokuapp.com/doctorservices').then(res=>res.json()))
 
 
    const imgApiKey="2e23ea39c13302f51994cfeea7fa6d4b"
@@ -45,7 +45,7 @@ const AddDoctot = () => {
            img:img
 
         }
-        fetch('http://localhost:5000/doctor',{
+        fetch('https://infinite-brook-24824.herokuapp.com/doctor',{
            method:"POST",
            headers:{
               'content-type':"application/json",
