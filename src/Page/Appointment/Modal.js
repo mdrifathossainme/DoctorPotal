@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const Modal = ({opneModal,date,setOpneModal,refetch}) => {
-    const {_id,name, slots}=opneModal
+    const {_id,name, slots,price}=opneModal
 
 const [user]=useAuthState(auth)
 
@@ -20,6 +20,7 @@ const handleSubmit=(e)=>{
             treatment:name,
             date:formattedDate,
             slot,
+            price,
             patient:user.email,
             patientNanme:user.displayName,
             phone:e.target.number.value
@@ -37,7 +38,7 @@ const handleSubmit=(e)=>{
         .then(res=>res.json())
         .then(data=>{
             if(data.success){
-                toast(`Appointment is set, ${formattedDate} at ${slot}`)
+                toast.success(`Appointment is set, ${formattedDate} at ${slot}`)
             }
             else{
                 toast.error(`Already have and appointment on ${data.booking?.date} at ${data.booking?.slot}`)

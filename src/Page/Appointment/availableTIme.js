@@ -3,7 +3,7 @@ import React from 'react';
 import PraimayBtn from '../Shared/PraimayBtn';
 
 const AvailableTIme = ({timeAvailable,setOpneModal}) => {
-    const {nam,slots}=timeAvailable;
+    const {name,slots,price}=timeAvailable;
  
 
     return (
@@ -17,6 +17,7 @@ const AvailableTIme = ({timeAvailable,setOpneModal}) => {
     Try to Anoter Day
     </span> }</p>
     <p className='text-center'>{slots.length}  {slots.length>1? "SPACES ":"SPACE"} AVAILABLE</p>
+    <p className='text-center'>Price: ${price}</p>
     </span>
     <div  className="  card-actions justify-center">
     <label  disabled={slots.length===0 } onClick={()=>setOpneModal(timeAvailable)}  htmlFor="booingModal"  className="  mt-8 btn bg-gradient-to-r from-secondary to-primary text-white upparc">Book Appointment</label>

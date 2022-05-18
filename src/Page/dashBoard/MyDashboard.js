@@ -2,7 +2,7 @@ import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { get } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
         const MyDashboard = () => {
         const [user]=useAuthState(auth)
@@ -40,6 +40,7 @@ import auth from '../../firebase.init';
                             <th>Date</th>
                             <th>Time</th>
                             <th>Treatment</th>
+                            <th>Prement</th>
                            
                         </tr>
                     </thead>
@@ -50,6 +51,10 @@ import auth from '../../firebase.init';
                             <td>{a.date}</td>
                             <td>{a.slot}</td>
                             <td>{a.treatment}</td>
+                            <td>{(a.price&& !a.paid)&& <Link to={`/dashboard/payment/${a._id}`}><button className='btn btn-success btn-sm btn-outline' >pay</button></Link>}
+                            {a.paid &&<button className='text-success font-bold'>Pay Complate</button>}
+                            </td>
+
                             
                         </tr>)}
                        

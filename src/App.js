@@ -19,6 +19,7 @@ import AllUser from './Page/AllUser/AllUser';
 import RequirAdmin from './Page/Login/RequiedAdmin';
 import AddDoctot from './Page/AddDoctot/AddDoctot';
 import ManegDoctor from './Page/dashBoard/ManegDoctor';
+import Payment from './Page/dashBoard/Payment';
 function App() {
   return (
     <div className='max-w-7xl  mx-auto'>
@@ -44,6 +45,7 @@ function App() {
         <Route index element={<MyDashboard/>}/>
          <Route path='rewi' element={<Review/>}/>
          <Route path='adddoctor' element={<AddDoctot/>}/>
+         <Route path='payment/:id' element={<Payment/>}/>
 
          <Route path='alluser' element={<RequirAdmin>
           <AllUser/>
@@ -51,6 +53,8 @@ function App() {
          <Route path='manegdoctor' element={<RequirAdmin>
           <ManegDoctor/>
          </RequirAdmin>}/>
+
+
       </Route >
       <Route path="/reviews" element={<Reviews/>}></Route >
       <Route path="/contactus" element={<ContactUs/>}></Route >
