@@ -9,7 +9,7 @@ import CheckoutForm from './CheckoutForm';
 const stripePromise = loadStripe('pk_test_51L0f5ODF4jr9Eb1gaJNlGaHr8vxO6jWXWmdAngCkj8oSpZK1gFhXUrXlrCukYH7qWgU9ttMs8uo86s9dxtB9OLeY00BNmwf0Tg');
 const Payment = () => {
     const {id}=useParams();
-    const url=`http://localhost:5000/booking/${id}`
+    const url=`https://infinite-brook-24824.herokuapp.com/booking/${id}`
 
     const {data ,isLoading}=useQuery('doctor', ()=>fetch(url).then(res=>res.json()))
 
